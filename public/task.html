@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .task{
+            background-color: #EAEAEA;
+            padding: 10% 100% 10% 10%;
+            height: 100px;
+            border-radius: 10px 0px 0px 10px;
+            color: black;
+        }
+    </style>
+    <title>TODO</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="heading row">
+            <img src="Images/img.jpg" alt="img">
+            <h4 class="ml-auto">WELCOME TO TASK MANAGER</h4>
+            <a href="login.html" class="ml-auto">LOGIN</a>
+        </div>
+        <div class="main row">
+            <div class="nav_bar col-2">
+                <div>
+                    <a href="index.html" class="home">HOME</a><br>
+                    <a href="diary.html" class="diary">DIARY</a><br>
+                    <a href="notes.html" class="notes">NOTES</a><br>
+                    <a href="task.html" class="task">TASKS</a><br>
+                    <a href="reminder.html" class="reminder">REMINDERS</a><br>
+                </div>
+            </div>
+            <div class="tasks col-10">
+                <div class="task_details row">
+                    <div class="col-6">
+                        <label for="completed_tasks"><h5>COMPLETED TASKS : <p id = "completed">0</p></h5><span id="completed_asks"></span></label>
+                    </div>
+                    <div class="col-6">
+                        <label for="pending_tasks"><h5></h>PENDING TASKS : <p style="margin-left: 0; left:0;" id="notcompleted">0</p></h5><span id="pending_asks"></span></label>
+                    </div>
+                </div>
+                <div class="task_description row">
+                    <div class="col-10">
+                        <label for="date">Task Date :</label>
+                        <input type="date" id="get_date"><br><br>
+                        <textarea class="notes_description d-none d-lg-inline" name="Description" id="description" cols="90" rows="14"></textarea>
+                        <textarea class="notes_description d-none d-md-inline d-lg-none" name="Description" id="description" cols="40" rows="12"></textarea>
+                        <textarea class="notes_description d-inline d-md-none" name="Description" id="description" cols="20" rows="12"></textarea>
+                    </div>
+                    <div class="2">
+                        <button class="button" onclick="save_task()">SAVE TASK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer row">
+            <div class="col-8">Thanks for using this websits,for suggestions please contact.Please share your wonderfull experience with us <br>Your suggetions will help us to improve <br><B>THANKING YOU</B></div>
+            <div class="col-2">
+                <b><u>CONTACT DETAILS :</u></b><br>
+                Phone : 86XXXXXXXX <br>
+                GMAIL : kxxxxx@gmail.com
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function save_task(){
+            const date = document.getElementById('get_date').textContent;
+            const description = document.getElementById('description').textContent;
+
+            localStorage.setItem('date', date);
+            localStorage.setItem('description', description);
+
+            var count = document.getElementById("notcompleted").textContent;
+            
+            let n=parseInt(count)+1;
+            document.getElementById("notcompleted").textContent = n;
+        }
+    </script>
+</body>
+</html>

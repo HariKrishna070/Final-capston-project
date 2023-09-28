@@ -1,0 +1,69 @@
+body{
+    background-image: url(Images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: backgroundAnimation 20s infinite alternate;
+}
+
+@keyframes backgroundAnimation{
+    0% {
+        background-image: url('Images/background1.jpg');
+    }
+    20% {
+        background-image: url('Images/background2.jpg');
+    }
+    40% {
+        background-image: url('Images/background3.jpg');
+    }
+    60%{
+        background-image: url('Images/background4.jpg');
+    }
+    80%{
+        background-image: url('Images/background5.jpg');
+    }
+    100%{
+        background-image: url('Images/background.jpg');
+    }
+}
+
+.form{
+    background-color: rgb(240, 209, 226);
+    width: 30%;
+    border: 2px solid black;
+    margin-left: 10%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+.form input,h4,button{
+    display: block;
+    padding: 10px 14px 10px 14px;
+    margin-left: calc(30%/1.2);
+    outline: none;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.form a{
+    padding: 5px 10px 5px 10px;
+    margin-left: calc(30%/1.2);
+}
+
+.form button{
+    border: 0px;
+    background-color: rgb(120, 140, 196);
+    border-radius: 5px;
+    margin-bottom: 10%;
+    color: aliceblue;
+}
+
+.form button:hover{
+    background-color: rgb(64, 233, 93);
+}
+
+input:focus{
+    border: 5px solid rgb(238, 29, 64);
+    border-radius: 10px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
